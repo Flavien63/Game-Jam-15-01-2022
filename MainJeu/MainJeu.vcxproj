@@ -142,10 +142,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bloc.hpp" />
+    <ClInclude Include="Bloc_Deplacable.hpp" />
+    <ClInclude Include="Bloc_Jump.hpp" />
     <ClInclude Include="Entite.hpp" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Plateforme.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bloc.cpp" />
+    <ClCompile Include="Bloc_Deplacable.cpp" />
+    <ClCompile Include="Bloc_Jump.cpp" />
     <ClCompile Include="Entite.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Plateforme.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
