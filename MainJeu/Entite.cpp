@@ -1,11 +1,15 @@
 #include "Entite.hpp"
 
+Entite::nbEntite=0;
+
 int Entite::getHauteur() { return hauteur; }
 int Entite::getLongueur() { return longueur; }
 int Entite::getPosx() { return posx; }
 int Entite::getPosy() { return posy; }
 int Entite::getVitx() { return vitx; }
 int Entite::getVity() { return vity; }
+static int Entite::getNbEntite() {return nbEntite};
+
 
 void Entite::setHauteur(int l)	{ hauteur = l; }
 void Entite::setLongueur(int l) { longueur = l; }
@@ -24,6 +28,7 @@ Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
 	posy = y;
 	vitx = x;
 	vity = y;
+	nbEntite++;
 }
 
 bool operator== (Entite& a, Entite& b)
