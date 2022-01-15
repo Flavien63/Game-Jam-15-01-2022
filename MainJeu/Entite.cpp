@@ -1,6 +1,5 @@
 #include "Entite.hpp"
 
-
 int Entite::getHauteur() { return hauteur; }
 int Entite::getLongueur() { return longueur; }
 int Entite::getPosx() { return posx; }
@@ -43,39 +42,66 @@ void Entite::deplacer(Map map)
 	bool checkX = true;
 	bool checkY = true;
 	int i = 0;
-	int posXgrid = (posx + vitx) / map.getHauteurBlock();
-	int posYgrid = (posy + vity) / map.getHauteurBlock();
+	int posXgrid = (posx + vitx) / map.getLargeurBlock();
+	int posYgrid = (posy + vity) / map.getLargeurBlock();
 	if (!(map.matBlock[posXgrid][posYgrid])) {
-		while (check && i<nbEntite)
+		while ((checkX || checkY) && i<nbEntite)
 		{
 			Entite currEntite = map.getEntite(i);
-			if (!(&currEntite == this))
+			if (!(&currEntite == this) && (typeid(currEntite) == typeid(Bloc)))
 			{
-				currEntiteXgrid = (currEntite.posx + vitx) / map.getHauteurBlock();
-				currEntiteYgrid = (currEntite.posy + vity) / map.getHauteurBlock();
-				check = (typeid(currEntite) == typeid(Bloc) && 
-					!(posx + vitx >= currEntite.posx && posx + vitx <= currEntite.posx + currEntite.longueur) &&
-					!(posy + vity >= currEntite.posy && posy + vity <= currEntite.posy + currEntite.hauteur));
+				checkX = checkX && !(posx + vitx + longueur >= currEntite.getPosx() && posx + vitx <= currEntite.getPosx() + currEntite.getLongueur());
+				checkY = checkY && !(posy + vity + hauteur >= currEntite.getPosy() && posy + vity <= currEntite.getPosy() + currEntite.getHauteur());
 
 			}
 			++i;
 		}
 
-		if (check) {
+		if (checkX) {
 			posx += vitx;
+		}
+		else {
+			vitx = 0;
+		}
+
+		if (checkY) {
 			posy += vity;
+		}
+		else {
+			vity = 0;
 		}
 	}
 
-}	//rajouter deplacement sur plateforme, gerer deplacement vers mur
+}	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
 
 
 bool Entite::estSol(Map map)
 {
-	return ((posx % map.largeBlock) == 0 && map.tabBlockFixe[posx % map.largBlock] == 0); //check entite
+	bool check = (posx % map.getLargeurBlock() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
+	int i = 0;
+	while (check && i < nbEntite)
+	{
+		Entite currEntite = map.getEntite(i);
+		if (!(&currEntite == this) && (typeid(currEntite) == typeid(Bloc)))
+		{
+			check = check || (posx + longueur > currEntite.getPosx() && posx < currEntite.getPosx() + currEntite.getLongueur() &&
+				posy == currEntite.getPosy() + currEntite.getHauteur() + 1);
+		}
+		++i;
+	}
+
 }
 
 void Entite::affiche()
 {
-
+	std::cout << "affiche" << std::endl;
 }
+
+/*
+int main()
+{
+	Entite test = Entite(0,1,2,3,4,5);
+	Entite test2 = Entite(0, 1, 222, 3, 4, 5);
+	test.affiche();
+	std::cout << (test==test2) << std::endl;
+}*/

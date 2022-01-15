@@ -1,7 +1,7 @@
 #pragma once
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
 #include <typeinfo>
+#include <iostream>
+using namespace std;
 
 class Entite
 {
@@ -39,5 +39,5 @@ public:
 
 };
 
-bool operator== (Entite& a, Entite& b)
+bool operator== (Entite& a, Entite& b);
 
