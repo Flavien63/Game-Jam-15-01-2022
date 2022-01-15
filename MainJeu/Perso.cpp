@@ -10,7 +10,7 @@ Perso::~Perso() {
 
 }
 
-void Perso::getPV() {
+int Perso::getPV() {
 	return PV;
 }
 
@@ -32,13 +32,13 @@ void Perso::setv_saut(int val)
 	v_saut = val;
 }
 
-void Perso::Sauter(Perso pers) {
-	pers.setPosition_y = pers.getPosition_y + v_saut;
+void Perso::Sauter(Entite ent) {
+	ent.setPosition_y = ent.getPosition_y + v_saut;
 }
 
-void Perso::Interagir(Perso pers, Bloc_Jump bj) {
+void Perso::Interagir(Entite ent, Bloc_Jump bj) {
 	v_saut = bj.getv_saut();
-	Sauter(pers, v_saut);
+	Sauter(ent, v_saut);
 }
 
 void Perso::Interragir(Entite ent, Bloc_Deplacable bd, MAP map) {

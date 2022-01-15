@@ -1,4 +1,5 @@
 #include "Ennemi.hpp"
+#include "Perso.hpp"
 
 Ennemi::Ennemi(Texture texture):
 	vitesse(0), texture(texture)

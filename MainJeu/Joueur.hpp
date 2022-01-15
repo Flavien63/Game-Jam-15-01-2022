@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef __JOUEUR_HPP__
+#define __JOUEUR_HPP__
+
 class Joueur
 {
 	Texture texture;
@@ -12,3 +16,4 @@ public:
 	int getCheckpoint();
 };
 
+#endif

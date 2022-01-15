@@ -1,4 +1,5 @@
 #include "Joueur.hpp"
+#include "Perso.hpp"
 
 Joueur::Joueur(Texture texture):
 	checkpoint(0), texture(texture)

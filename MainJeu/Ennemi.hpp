@@ -1,4 +1,9 @@
 #pragma once
+#ifndef __ENNEMI_HPP__
+#define __ENNEMI_HPP__
+
+#endif // !__ENNEMI_HPP__
+
 class Ennemi
 {
 	int vitesse;
@@ -12,3 +17,4 @@ public:
 	void Interragir(Bloc b);
 };
 
+#endif
