@@ -10,5 +10,6 @@ class Bloc_Deplacable: public Bloc
 		Bloc_Deplacable(int largeur, int longeur, int posx, int posy);
 		static void rendreActif();
 		bool isActif();
+		void deplacer(Map map);
 };
 

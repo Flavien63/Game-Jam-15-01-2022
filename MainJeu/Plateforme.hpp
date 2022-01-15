@@ -12,11 +12,10 @@ class Plateforme :public Bloc
 	int posAy;
 	int posBx;
 	int posBy;
-	int sens = 1;
 
 	public:
 		Plateforme(int largeur, int longeur, int posx, int posy, int new_posAx, int new_posAy, int new_posBx, int new_posBy, int nb_frame);
 		static void rendreActif();
 		bool isActif();
-		void seDeplacer();
+		void deplacer(Map map);
 };
