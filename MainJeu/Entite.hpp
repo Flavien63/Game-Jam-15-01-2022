@@ -1,26 +1,38 @@
 #pragma once
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <typeinfo>
 
 class Entite
 {
 	int largeur;
 	int longueur;
-	//GL_TEXTURE_2D texture; //Wrong type
 	int posx; 
 	int posy;
 	int vitx;
 	int vity;
+	static int nbEntite;
 
 public:
 	int getLargeur();
 	int getLongueur();
-	//GL_TEXTURE_2D getTexture();
 	int getPosx();
+	int getPosy();
+	int getVitx();
+	int getVity();
+
+	void setLargeur(int l);
+	void setLongueur(int l);
+	void setPosx(int x);
+	void setPosy(int y);
+	void setVitx(int vx);
+	void setVity(int vy);
+
+	Entite();
 
 
 
-	void deplacer();
+	void deplacer(Map map);
 	bool estSol(Map map);
 	void affiche();
 };
