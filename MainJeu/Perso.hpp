@@ -4,11 +4,12 @@
 #define __PERSO_HPP__
 
 #include "Entite.hpp"
+#include "Map.hpp"
+#include "Bloc.hpp"
+#include "Bloc_Deplacable.hpp"
+#include "Bloc_Jump.hpp"
 
 class Texture{};
-class Bloc{};
-class Bloc_Jump{};
-class Bloc_Deplacable{};
 class Map{};
 
 class Perso : Entite
@@ -24,9 +25,9 @@ public:
 	void PVDown();
 	int getv_saut();
 	void setv_saut(int);
-	void Sauter(Entite, int);
-	void Interagir(Entite, Bloc_Jump);
-	void Interragir(Entite, Bloc_Deplacable, Map);
+	void Sauter(int);
+	void Interagir(Bloc_Jump);
+	void Interragir(Bloc_Deplacable, Map);
 };
 
 #endif

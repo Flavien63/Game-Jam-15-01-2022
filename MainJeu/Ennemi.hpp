@@ -2,6 +2,8 @@
 #ifndef __ENNEMI_HPP__
 #define __ENNEMI_HPP__
 
+#include "Perso.hpp"
+
 class Ennemi
 {
 	int vitesse;
@@ -12,7 +14,7 @@ public:
 	~Ennemi();
 	int getVitesse();
 	void setVitesse(int);
-	void Interragir(Ennemi, Bloc);
+	void Interragir(Ennemi);
 };
 
 #endif

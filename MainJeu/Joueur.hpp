@@ -3,6 +3,8 @@
 #ifndef __JOUEUR_HPP__
 #define __JOUEUR_HPP__
 
+#include "Perso.hpp"
+
 class Joueur
 {
 	Texture texture;
