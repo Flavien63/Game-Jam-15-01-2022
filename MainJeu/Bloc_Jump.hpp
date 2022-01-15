@@ -4,7 +4,7 @@
 class Bloc_Jump : public Bloc
 {
 	static bool actif;
-	int v_saut;
+	int vit_saut;
 	
 	public:
 		Bloc_Jump(int largeur, int longeur, int posx, int posy);
