@@ -40,7 +40,7 @@ void Perso::Interagir(Entite ent, Bloc_Jump bj) {
 	Sauter(ent, bj.getv_saut());					//vitesse de saut du perso donnée par bloc
 }
 
-void Perso::Interragir(Entite ent, Bloc_Deplacable bd, MAP map) {
+void Perso::Interragir(Entite ent, Bloc_Deplacable bd, Map map) {
 	bd.setVitx(ent.getVitx());
 	bd.deplacer(map);
 }

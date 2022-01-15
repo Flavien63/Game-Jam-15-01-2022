@@ -3,12 +3,13 @@
 #ifndef __PERSO_HPP__
 #define __PERSO_HPP__
 
+#include "Entite.hpp"
+
 class Texture{};
-class Entite{};
 class Bloc{};
 class Bloc_Jump{};
 class Bloc_Deplacable{};
-class MAP{};
+class Map{};
 
 class Perso : Entite
 {
@@ -25,7 +26,7 @@ public:
 	void setv_saut(int);
 	void Sauter(Entite, int);
 	void Interagir(Entite, Bloc_Jump);
-	void Interragir(Entite, Bloc_Deplacable, MAP);
+	void Interragir(Entite, Bloc_Deplacable, Map);
 };
 
 #endif
