@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ennemi.cpp" />
     <ClCompile Include="Entite.cpp" />
+    <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="Perso.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ennemi.hpp" />
     <ClInclude Include="Entite.hpp" />
+    <ClInclude Include="Joueur.hpp" />
     <ClInclude Include="Perso.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
