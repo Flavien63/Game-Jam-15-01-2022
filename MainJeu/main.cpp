@@ -10,15 +10,6 @@
 #include"EBO.h"
 
 
-// Vertices coordinates
-/*GLfloat vertices[] =
-{
-	-0.5f, -0.5f , 0.0f,0.8f,0.35f,0.02f,	0.0f,0.0f,
-	-0.5f, 0.5f , 0.0f,	0.8f,0.35f,0.02f,	0.0f,1.0f,
-	0.5f, 0.5f , 0.0f,	0.8f,0.35f,0.02f,	1.0f,1.0f,
-	0.5f, -0.5f , 0.0f,	0.8f,0.35f,0.02f,	1.0f,0.0f
-};
-*/
 // Indices for vertices order
 GLuint indices[] =
 {
@@ -94,27 +85,6 @@ int main()
 	// Generates Shader object using shaders defualt.vert and default.frag
 	Shader shaderProgram("default.vert", "default.frag");
 
-
-
-	// Generates Vertex Array Object and binds it
-	/*VAO VAO1;
-	VAO1.Bind();
-
-	// Generates Vertex Buffer Object and links it to vertices
-	VBO VBO1(vertices, sizeof(vertices));
-	// Generates Element Buffer Object and links it to indices
-	EBO EBO1(indices, sizeof(indices));
-
-	// Links VBO to VAO
-	VAO1.LinkAttrib(VBO1, 0,3,GL_FLOAT,8*sizeof(float),(void*)0);
-	VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3*sizeof(float)));
-	VAO1.LinkAttrib(VBO1, 2, 2, GL_FLOAT, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-	// Unbind all to prevent accidentally modifying them
-	VAO1.Unbind();
-	VBO1.Unbind();
-	EBO1.Unbind();*/
-
-
 	int widthImg, heightImg, numColCh;
 	stbi_set_flip_vertically_on_load(true);
 	unsigned char* bytes = stbi_load("MATHVDT.jpg", &widthImg, &heightImg, &numColCh, 0);
@@ -181,8 +151,6 @@ int main()
 
 	// Delete all the objects we've created
 	VAO1.Delete();
-	//VBO1.Delete();
-	//EBO1.Delete();
 	MATHVDT.Delete();
 	Super.Delete();
 	shaderProgram.Delete();
