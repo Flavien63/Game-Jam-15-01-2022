@@ -4,12 +4,15 @@
 class Plateforme :public Bloc
 {
 	static bool actif;
-	int posA;
-	int posB;
+	int posAx;
+	int posAy;
+	int posBx;
+	int posBy;
+	int sens = 1;
 
 	public:
-		Plateforme(int new_posA, int new_posB);
+		Plateforme(int largeur, int longeur, int posx, int posy, int new_posAx, int new_posAy, int new_posBx, int new_posByB);
 		static void rendreActif();
-		bool estActif();
+		bool isActif();
+		void seDeplacer();
 };
-

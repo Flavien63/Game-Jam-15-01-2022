@@ -1,10 +1,12 @@
 #pragma once
-class Bloc
+#include "Entite.hpp"
+
+class Bloc: public Entite
 {
 	public:
-		Bloc();
+		Bloc(int largeur, int longeur, int posx, int posy, int vitx, int vity);
 		virtual ~Bloc() = 0;
 		virtual void rendreActif() = 0;
-		virtual bool estActif() = 0;
+		virtual bool isActif() = 0;
 };
 

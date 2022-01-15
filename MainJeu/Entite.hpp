@@ -17,8 +17,7 @@ public:
 	int getLongueur();
 	//GL_TEXTURE_2D getTexture();
 	int getPosx();
-
-
+	void setPosx(int x);
 
 	void deplacer();
 	bool estSol(Map map);

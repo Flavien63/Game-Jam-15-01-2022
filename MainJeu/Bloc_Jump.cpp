@@ -2,16 +2,18 @@
 
 bool Bloc_Jump::actif = false;
 
-Bloc_Jump::Bloc_Jump():
-	v_saut(0)
-{}
+Bloc_Jump::Bloc_Jump(int largeur, int longeur, int posx, int posy):
+	Bloc(largeur, longeur, posx, posy, 0, 0)	
+{
+	v_saut = 10;
+}
 
 void Bloc_Jump::rendreActif()
 {
 	actif = true;
 }
 
-bool Bloc_Jump::estActif()
+bool Bloc_Jump::isActif()
 {
 	return actif;
 }

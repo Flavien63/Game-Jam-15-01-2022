@@ -4,11 +4,11 @@
 class Bloc_Jump : public Bloc
 {
 	static bool actif;
-	float v_saut;
+	int v_saut;
 	
 	public:
-		Bloc_Jump();
+		Bloc_Jump(int largeur, int longeur, int posx, int posy);
 		static void rendreActif();
-		bool estActif();
+		bool isActif();
 };
 

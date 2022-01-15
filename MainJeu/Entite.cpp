@@ -6,8 +6,6 @@ int Entite::getLongueur() { return longueur; }
 //GL_TEXTURE_2D Entite::getTexture() { return texture; }
 int Entite::getPosx() { return posx; }
 
-
-
 void Entite::deplacer()
 {
 	if (posx + vitx)
