@@ -1,13 +1,13 @@
 #include "Map.hpp"
 
-Map::Map()
+Map::Map() 
 {
 	//memset(_matBlocFix, )
 	for (int j = 0; j < _hauteurMap; j++)
 	{
 		for (int i = 0; i < _longueurMap; i++)
 		{
-			this->_matBlocFix[j][i] = 0;
+			this->_mapBlocFix[j][i] = 0;
 		}
 	}
 }
@@ -32,10 +32,10 @@ void Map::chargerMap(string path)
 				switch (bloc)
 				{
 				case Rien:
-					_matBlocFix[i][j] = 0; // Rien
+					_mapBlocFix[i][j] = 0; // Rien
 					break;
 				case BlocFixe:
-					_matBlocFix[i][j] = 1; // Bloc Fixe
+					_mapBlocFix[i][j] = 1; // Bloc Fixe
 					break;
 				case BlocSpecialJump:
 					//Bloc_Jump()
@@ -85,9 +85,10 @@ Entite Map::getEntite(int i)
 	if (i < 0 || i >= 100)
 	{
 		cout << "Index en dehors du tableau d'entites"<<endl;
-	}else
+	}
+	else
 	{
-		return _entites[i];
+		return _entites[i];	
 	}
 }
 

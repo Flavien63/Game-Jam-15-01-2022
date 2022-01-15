@@ -14,6 +14,25 @@ void Controller::deplacementPerso(Perso inPerso)
 	
 }
 
+void Controller::afficherEntite()
+{
+	int joueurPosX = _joueur.posx;
+	int joueurPosY = _joueur.posy;
 
+	int entitePosX, entitePosY;
+
+	for (int i = 0; i < Entite::nbEntite; i++)
+	{
+		entitePosX = _map.getEntite(i).getPosx;
+		entitePosY = _map.getEntite(i).getPosy;
+
+		if (abs(joueurPosX - entitePosX) < tailleEcranX
+			&& abs(joueurPosY - entitePosY) < tailleEcranY)
+		{
+			// _map.getEntite(i).afficher(); // TA fonction Alexandre
+		}
+
+	}
+}
 
 

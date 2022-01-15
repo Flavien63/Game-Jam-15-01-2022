@@ -18,10 +18,10 @@ private:
 
 	const int _longueurMap = 11;
 	const int _hauteurMap = 4;
-	int _matBlocFix[100][1000];
+	int _mapBlocFix[4][11];
 
-	const int _nbMaxEntites = 100;
-	Entite _entites[100];
+	const int _nbMaxEntites = 50;
+	Entite _entites[10];
 
 public:
 	Map();
