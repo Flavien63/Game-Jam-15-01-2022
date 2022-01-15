@@ -28,7 +28,7 @@ public:
 	void setVitx(int vx);
 	void setVity(int vy);
 
-	Entite();
+	Entite(int larg, int lng, int x, int y, int vx, int vy);
 
 
 
