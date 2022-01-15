@@ -20,6 +20,7 @@ public:
 	int getPosy();
 	int getVitx();
 	int getVity();
+	static int getNbEntite();
 
 	void setHauteur(int l);
 	void setLongueur(int l);
