@@ -22,5 +22,5 @@ void Ennemi::setVitesse(int val)
 
 void Ennemi::Interragir(Ennemi en, Bloc b)
 {
-	en.setVitesse(-en.getVitesse);				//l'ennemi rebrousse chemin lorsqu'il rencontre un obstacle
+	en.setVitesse(-en.getVitesse());				//l'ennemi rebrousse chemin lorsqu'il rencontre un obstacle
 }
