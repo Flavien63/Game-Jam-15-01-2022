@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include "Map.hpp"
+#include "Entite.hpp"
 
 
 class Joueur{};

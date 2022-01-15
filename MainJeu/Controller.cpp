@@ -16,15 +16,15 @@ void Controller::deplacementPerso(Perso inPerso)
 
 void Controller::afficherEntite()
 {
-	int joueurPosX = _joueur.posx;
-	int joueurPosY = _joueur.posy;
+	int joueurPosX = _joueur.getPosx();
+	int joueurPosY = _joueur.getPosy();
 
 	int entitePosX, entitePosY;
 
-	for (int i = 0; i < Entite::nbEntite; i++)
+	for (int i = 0; i < Entite::nbEntite-1; i++)
 	{
-		entitePosX = _map.getEntite(i).getPosx;
-		entitePosY = _map.getEntite(i).getPosy;
+		entitePosX = _map.getEntite(i).getPosx();
+		entitePosY = _map.getEntite(i).getPosy();
 
 		if (abs(joueurPosX - entitePosX) < tailleEcranX
 			&& abs(joueurPosY - entitePosY) < tailleEcranY)
