@@ -32,13 +32,12 @@ void Perso::setv_saut(int val)
 	v_saut = val;
 }
 
-void Perso::Sauter(Entite ent) {
-	ent.setPosition_y = ent.getPosition_y + v_saut;
+void Perso::Sauter(Entite ent, int vitesse) {
+	ent.setPosition_y = ent.getPosition_y + vitesse;
 }
 
 void Perso::Interagir(Entite ent, Bloc_Jump bj) {
-	v_saut = bj.getv_saut();
-	Sauter(ent, v_saut);
+	Sauter(ent, bj.getv_saut());					//vitesse de saut du perso donnée par bloc
 }
 
 void Perso::Interragir(Entite ent, Bloc_Deplacable bd, MAP map) {
