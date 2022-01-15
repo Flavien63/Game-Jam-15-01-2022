@@ -1,9 +1,8 @@
 #include<iostream>
-#include<glad/glad.h>
-#include<GLFW/glfw3.h>
-#include<stb/stb_image.h>
+
 
 #include"shaderClass.h"
+#include"Entite.hpp"
 #include"Texture.h"
 #include"VAO.h"
 #include"VBO.h"
@@ -125,7 +124,7 @@ int main()
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		VAO1.Unbind();
 
-		carre(vertices, 100.2, 100.2, 400, 0.5f);
+		carre(vertices, 150.2, 100.2, 400, 0.5f);
 		VAO1.Bind();
 		VBO VBO2(vertices, sizeof(vertices));
 		EBO EBO2(indices, sizeof(indices));
