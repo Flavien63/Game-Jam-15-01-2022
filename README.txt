@@ -1,0 +1,1 @@
+Game Jam du week-end du 15 et 16 janvier 2022 avec comme équipe : Alexandre, Antoine, Axel, Flavien, Mathieu et Nathan
