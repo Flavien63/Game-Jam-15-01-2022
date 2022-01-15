@@ -33,7 +33,7 @@ void Perso::setv_saut(int val)
 }
 
 void Perso::Sauter(Entite ent, int vitesse) {
-	ent.setPosition_y = ent.getPosition_y + vitesse;
+	ent.setPosy(ent.getPosy() + vitesse);
 }
 
 void Perso::Interagir(Entite ent, Bloc_Jump bj) {
