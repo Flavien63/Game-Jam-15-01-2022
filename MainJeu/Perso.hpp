@@ -14,6 +14,6 @@ public:
 	void setv_saut(int);
 	void Sauter(Perso);
 	void Perso::Interagir(Entite, Bloc_Jump);
-	void Perso::Interragir(Entite, Bloc_Deplacable);
+	void Perso::Interragir(Entite, Bloc_Deplacable, MAP);
 };
 

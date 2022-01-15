@@ -41,6 +41,7 @@ void Perso::Interagir(Perso pers, Bloc_Jump bj) {
 	Sauter(pers, v_saut);
 }
 
-void Perso::Interragir(Entite ent, Bloc_Deplacable bd) {
-	
+void Perso::Interragir(Entite ent, Bloc_Deplacable bd, MAP map) {
+	bd.setVitx(ent.getVitx());
+	deplacer(map);
 }
