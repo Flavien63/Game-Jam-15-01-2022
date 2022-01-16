@@ -16,7 +16,7 @@
 using namespace std;
 
 //#include "Bloc.hpp"
-#include "Map.hpp"
+//#include "Map.hpp"
 
 class Map;
 
@@ -55,7 +55,7 @@ public:
 
 
 	void deplacer();
-	bool estSol( Map& map);
+	//bool estSol( Map& map);
 	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO);
 
 };

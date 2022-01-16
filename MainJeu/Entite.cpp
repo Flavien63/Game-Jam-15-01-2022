@@ -67,24 +67,6 @@ void Entite::deplacer()
 
 }	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
 
-
-bool Entite::estSol( Map &map)
-{
-	int posX = this->getPosx();
-	int posY = this->getPosy();
-	bool check;
-	check = map.isBlocFixe(posX / map.getLargeurBloc(), (posY - 1) / map.getLargeurBloc());
-	int i = 0;
-	Entite autre;
-	while (!check && i < Entite::getNbEntite() - 1)
-	{
-		autre = map.getEntite(i);
-		check = check && !(posY == autre.getPosy() + autre.getHauteur() + 1);
-		++i;
-	}
-
-}
-
 void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1)
 {
 	vertices[0] = posx;
