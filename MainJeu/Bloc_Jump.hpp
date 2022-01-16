@@ -13,6 +13,7 @@ class Bloc_Jump : public Bloc
 		Bloc_Jump(int largeur, int longeur, int posx, int posy);
 		static void rendreActif();
 		bool isActif();
+		int getVit_saut();
 };
 
 
