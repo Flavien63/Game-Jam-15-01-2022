@@ -4,13 +4,12 @@
 
 #include "Perso.hpp"
 
-class Ennemi
+class Ennemi : public Perso
 {
 	int vitesse;
-	Texture texture;
 
 public:
-	Ennemi(Texture);
+	Ennemi();
 	~Ennemi();
 	int getVitesse();
 	void setVitesse(int);

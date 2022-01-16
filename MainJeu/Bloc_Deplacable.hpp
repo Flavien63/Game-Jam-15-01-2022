@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef __BLOC_DEPLACABLE_HPP__
+#define __BLOC_DEPLACABLE_HPP__
+
 #include "Bloc.hpp"
 const int dim = 50;
 
@@ -12,3 +16,4 @@ class Bloc_Deplacable: public Bloc
 		bool isActif();
 };
 
+#endif

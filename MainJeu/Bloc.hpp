@@ -1,7 +1,11 @@
 #pragma once
+
+#ifndef __BLOC_HPP__
+#define __BLOC_HPP__
+
 #include "Entite.hpp"
 
-class Bloc: public Entite
+class Bloc : public Entite
 {
 	public:
 		Bloc(int largeur, int longeur, int posx, int posy, int vitx, int vity);
@@ -10,3 +14,4 @@ class Bloc: public Entite
 		virtual bool isActif() = 0;
 };
 
+#endif

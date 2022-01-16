@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef __BLOC_JUMP_HPP__
+#define __BLOC_JUMP_HPP__
+
 #include "Bloc.hpp"
 
 class Bloc_Jump : public Bloc
@@ -12,3 +16,4 @@ class Bloc_Jump : public Bloc
 		bool isActif();
 };
 
+#endif

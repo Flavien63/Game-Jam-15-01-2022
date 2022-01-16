@@ -1,9 +1,9 @@
 #ifndef __MAP_HPP__
 #define __MAP_HPP__
 
-class Bloc{};
-class Ennemi{};
-class Entite{};
+class Bloc;
+class Ennemi;
+class Entite;
 
 #include <string>
 #include <iostream>

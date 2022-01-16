@@ -1,7 +1,12 @@
 #pragma once
+
+#ifndef __ENTITE_HPP__
+#define __ENTITE_HPP__
+
 #include <typeinfo>
 #include <iostream>
 using namespace std;
+#include "Map.hpp"
 
 class Entite
 {
@@ -41,3 +46,4 @@ public:
 
 bool operator== (Entite& a, Entite& b);
 
+#endif

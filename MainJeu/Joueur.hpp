@@ -5,9 +5,8 @@
 
 #include "Perso.hpp"
 
-class Joueur
+class Joueur : public Perso
 {
-	Texture texture;
 	int checkpoint;
 
 public:
@@ -15,6 +14,7 @@ public:
 	~Joueur();
 	void CheckpointUp();
 	void CheckpointDown();
+	void CheckpointRAZ();
 	int getCheckpoint();
 };
 

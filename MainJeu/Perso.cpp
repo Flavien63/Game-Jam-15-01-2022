@@ -1,7 +1,7 @@
 #include "Perso.hpp"
 
-Perso::Perso() :
-	PV(5), v_saut(1)
+Perso::Perso() : 
+	Entite::Entite(10,10,0,0,0,0), PV(5), v_saut(1)
 {
 
 }
@@ -34,6 +34,7 @@ void Perso::setv_saut(int val)
 
 void Perso::Sauter(int vitesse) {
 	this->setPosy(this->getPosy() + vitesse);
+	
 }
 
 void Perso::Interagir(Bloc_Jump bj) {
