@@ -1,4 +1,6 @@
 #pragma once
+#ifndef __PIC_HPP__
+#define __PIC_HPP__
 #include "Bloc.hpp"
 
 class Pic : public Bloc
@@ -11,3 +13,4 @@ public:
 	bool isActif();
 };
 
+#endif // !__PIC_HPP__
