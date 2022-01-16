@@ -1,30 +1,21 @@
+<<<<<<< HEAD
 #include<iostream>
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
 #include<stb/stb_image.h>
 #include <stdlib.h>     
 #include <time.h>  
+=======
+#include <iostream>
+#include "Controller.hpp"
+#include "Map.hpp"
+>>>>>>> e4752d40b79565c0d17fcc4109f266714d0dca93
 
+using namespace std;
 
-#include"shaderClass.h"
-#include"Entite.hpp"
-#include"Texture.h"
-#include"VAO.h"
-#include"VBO.h"
-#include"EBO.h"
-
-
-// Indices for vertices order
-GLuint indices[] =
+int main(int, char**)
 {
-	0,1,2,
-	0,2,3
-};
-
-
-
-void initvertice(GLfloat* vertices)
-{
+<<<<<<< HEAD
 	vertices[3] = 0.0f;
 	vertices[4] = 0.0f;
 	vertices[8] = 0.0f;
@@ -137,8 +128,14 @@ int main()
 		glfwPollEvents();
 	}
 
+=======
+	cout << "Hello world !" << endl;
+>>>>>>> e4752d40b79565c0d17fcc4109f266714d0dca93
 
+	Map map{};
+	map.chargerMap("./Carte.txt");
 
+<<<<<<< HEAD
 	// Delete all the objects we've created
 	VAO1.Delete();
 	shaderProgram.Delete();
@@ -146,5 +143,7 @@ int main()
 	glfwDestroyWindow(window);
 	// Terminate GLFW before ending the program
 	glfwTerminate();
+=======
+>>>>>>> e4752d40b79565c0d17fcc4109f266714d0dca93
 	return 0;
 }
