@@ -142,6 +142,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bloc.hpp" />
+    <ClInclude Include="Bloc_Deplacable.hpp" />
+    <ClInclude Include="Bloc_Jump.hpp" />
+    <ClInclude Include="Checkpoint.hpp" />
+    <ClInclude Include="Ennemi.hpp" />
+    <ClInclude Include="glad.h" />
+    <ClInclude Include="Joueur.hpp" />
+    <ClInclude Include="Perso.hpp" />
+    <ClInclude Include="Pic.hpp" />
+    <ClInclude Include="Plateforme.hpp" />
+    <ClInclude Include="Entite.hpp" />
+    <ClInclude Include="Controller.hpp" />
+    <ClInclude Include="Main.hpp" />
+    <ClInclude Include="Map.hpp" />
+    <ClInclude Include="shaderClass.hpp" />
+    <ClInclude Include="stb.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="VAO.hpp" />
+    <ClInclude Include="VBO.hpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="Bloc.cpp" />
     <ClCompile Include="Bloc_Deplacable.cpp" />
     <ClCompile Include="Bloc_Jump.cpp" />
