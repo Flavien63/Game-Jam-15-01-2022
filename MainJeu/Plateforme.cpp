@@ -21,21 +21,17 @@ bool Plateforme::isActif()
 	return actif;
 }
 
-void Plateforme::seDeplacer()
+void Plateforme::deplacer(Map map)
 {
-	//Si on se trouve à l'une des extrémitées du trajet de la plateforme,
+	//Si on se trouve ï¿½ l'une des extrï¿½mitï¿½es du trajet de la plateforme,
 	//sens change de valeur pour que la plateforme effectue le trajet dans l'autre sens;
-	if (this->getPosx() == posAx && this->getPosy() == posAy)
+	if ((this->getPosx() == posAx && this->getPosy() == posAy) || (this->getPosx() == posBx && this->getPosy() == posBy))
 	{
-		sens = 1;
-	}
-	else if (this->getPosx() == posBx && this->getPosy() == posBy)
-	{
-		sens = -1;
+		this->setVitx(- this->getVitx());
+		this->setVity(- this->getVity());
 	}
 	else
 	{
-		this->setPosx(this->getPosx() + sens * this->getVitx());
-		this->setPosx(this->getPosy() + sens * this->getVity());
+		Entite::deplacer(map);
 	}
 }

@@ -1,4 +1,7 @@
-#pragma once
+#ifndef __BLOC_JUMP_HPP__
+#define __BLOC_JUMP_HPP__
+
+
 #include "Bloc.hpp"
 
 class Bloc_Jump : public Bloc
@@ -10,5 +13,8 @@ class Bloc_Jump : public Bloc
 		Bloc_Jump(int largeur, int longeur, int posx, int posy);
 		static void rendreActif();
 		bool isActif();
+		int getVit_saut();
 };
 
+
+#endif // !#define __BLOC_JUMP_HPP__
