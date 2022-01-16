@@ -1,4 +1,5 @@
 #include "Perso.hpp"
+#include "Bloc_Jump.hpp"
 
 Perso::Perso() : 
 	Entite::Entite(10,10,0,0,0,0), PV(5), v_saut(1)
@@ -39,7 +40,7 @@ void Perso::Sauter(int vitesse) {
 }
 
 void Perso::Interagir(Bloc_Jump bj) {
-	this->Sauter(bj.getv_saut());					//vitesse de saut du perso donnée par bloc
+	this->Sauter(bj.getVit_saut());					//vitesse de saut du perso donnée par bloc
 }
 
 void Perso::Interragir(Bloc_Deplacable bd, Map map) {

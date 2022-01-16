@@ -1,6 +1,6 @@
 #include "Entite.hpp"
 
-Entite::nbEntite=0;
+int Entite::nbEntite=0;
 
 int Entite::getHauteur() { return hauteur; }
 int Entite::getLongueur() { return longueur; }
@@ -8,7 +8,7 @@ int Entite::getPosx() { return posx; }
 int Entite::getPosy() { return posy; }
 int Entite::getVitx() { return vitx; }
 int Entite::getVity() { return vity; }
-static int Entite::getNbEntite() {return nbEntite};
+int Entite::getNbEntite() { return nbEntite; }
 
 
 void Entite::setHauteur(int l)	{ hauteur = l; }

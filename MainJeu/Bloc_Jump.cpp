@@ -17,3 +17,8 @@ bool Bloc_Jump::isActif()
 {
 	return actif;
 }
+
+int Bloc_Jump::getVit_saut()
+{
+	return vit_saut;
+}

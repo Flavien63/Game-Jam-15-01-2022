@@ -1,12 +1,9 @@
 #ifndef __MAP_HPP__
 #define __MAP_HPP__
 
-<<<<<<< HEAD
-=======
 class Bloc;
 class Ennemi;
 class Entite;
->>>>>>> 7a94d28aa08393986396126028ead6ada9da0b04
 
 #include <string>
 #include <iostream>
