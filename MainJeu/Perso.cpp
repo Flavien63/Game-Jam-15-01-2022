@@ -2,7 +2,7 @@
 #include "Bloc_Jump.hpp"
 
 Perso::Perso() : 
-	Entite::Entite(10,10,0,0,0,0), PV(5), v_saut(1)
+	PV(5), v_saut(1)
 {
 
 }
