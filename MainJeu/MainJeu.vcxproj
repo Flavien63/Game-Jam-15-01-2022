@@ -142,6 +142,9 @@
     <ClInclude Include="Bloc.hpp" />
     <ClInclude Include="Bloc_Deplacable.hpp" />
     <ClInclude Include="Bloc_Jump.hpp" />
+    <ClInclude Include="Checkpoint.hpp" />
+    <ClInclude Include="Item.hpp" />
+    <ClInclude Include="Pic.hpp" />
     <ClInclude Include="Plateforme.hpp" />
     <ClInclude Include="Entite.hpp" />
   </ItemGroup>
@@ -149,6 +152,9 @@
     <ClCompile Include="Bloc.cpp" />
     <ClCompile Include="Bloc_Deplacable.cpp" />
     <ClCompile Include="Bloc_Jump.cpp" />
+    <ClCompile Include="Checkpoint.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Pic.cpp" />
     <ClCompile Include="Plateforme.cpp" />
     <ClCompile Include="Entite.cpp" />
   </ItemGroup>
