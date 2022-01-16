@@ -16,6 +16,7 @@ class Perso : public Entite
 
 public:
 	Perso();
+	Perso(int larg, int lng, int x, int y, int vx, int vy);
 	~Perso();
 	int getPV();
 	void PVUp();

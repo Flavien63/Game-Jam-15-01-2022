@@ -5,9 +5,15 @@ Controller::Controller() : _joueur(), _map()
 	//_map.chargerMap("nomfichier")
 }
 
-void Controller::MouvementPerso()
+void Controller::MouvementPerso(int dirH, int dirV)
 {
-	
+	/*
+	if (glfwGetKey(Window, GLFW_KEY_D) == GLFW_PRESS)
+	{	}
+	*/
+	_joueur.setVitx(dirH);
+	_joueur.setVity(dirV);
+
 }
 
 void Controller::deplacementEntite()

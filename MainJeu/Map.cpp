@@ -49,10 +49,10 @@ void Map::chargerMap(string path)
 					//case BlocSpecialPateforme: // Lu après la map
 						//break;
 				case BlockSpecialChekpoint:
-					//_entites[Entite::getNbEntite() - 1] = Checkpoint(_largeurBloc, _largeurBloc, i * _largeurBloc, j * _largeurBloc);
+					_entites[Entite::getNbEntite() - 1] = Checkpoint(_largeurBloc, _largeurBloc, i * _largeurBloc, j * _largeurBloc);
 					break;
 				case BlockSpecialPic:
-					//_entites[Entite::getNbEntite() - 1] = Pic(_largeurBloc, _largeurBloc, i * _largeurBloc, j * _largeurBloc);
+					_entites[Entite::getNbEntite() - 1] = Pic(_largeurBloc, _largeurBloc, i * _largeurBloc, j * _largeurBloc);
 					break;
 				case BlocSpecialItem:
 					monFlux >> bloc;

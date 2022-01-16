@@ -11,6 +11,7 @@ class Joueur : public Perso
 
 public:
 	Joueur();
+	Joueur(int larg, int lng, int x, int y, int vx, int vy);
 	~Joueur();
 	void CheckpointUp();
 	void CheckpointDown();

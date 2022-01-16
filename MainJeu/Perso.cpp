@@ -7,6 +7,11 @@ Perso::Perso() :
 
 }
 
+Perso::Perso(int larg, int lng, int x, int y, int vx, int vy):
+	Entite(larg,lng,x,y,0,0), PV(5), v_saut(1)
+{
+}
+
 Perso::~Perso() {
 
 }

@@ -23,7 +23,7 @@ private:
 
 public:
 	Controller();
-	void MouvementPerso();
+	void MouvementPerso(int dirH, int dirV);
 	void deplacementEntite();
 	void afficherEntite();
 	
