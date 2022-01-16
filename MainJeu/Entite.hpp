@@ -8,10 +8,6 @@
 #include<stb/stb_image.h>
 
 #include"Texture.h"
-#include"VAO.h"
-#include"VBO.h"
-#include"EBO.h"
-#include"shaderClass.h"
 
 using namespace std;
 

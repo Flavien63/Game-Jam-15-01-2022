@@ -146,7 +146,6 @@
     <ClInclude Include="Bloc_Deplacable.hpp" />
     <ClInclude Include="Bloc_Jump.hpp" />
     <ClInclude Include="Checkpoint.hpp" />
-    <ClInclude Include="EBO.h" />
     <ClInclude Include="Ennemi.hpp" />
     <ClInclude Include="Joueur.hpp" />
     <ClInclude Include="Perso.hpp" />
@@ -156,10 +155,6 @@
     <ClInclude Include="Controller.hpp" />
     <ClInclude Include="Main.hpp" />
     <ClInclude Include="Map.hpp" />
-    <ClInclude Include="shaderClass.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="VAO.h" />
-    <ClInclude Include="VBO.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bloc.cpp" />
@@ -167,7 +162,6 @@
     <ClCompile Include="Bloc_Jump.cpp" />
     <ClCompile Include="Checkpoint.cpp" />
     <ClCompile Include="Ennemi.cpp" />
-    <ClCompile Include="glad.c" />
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="Perso.cpp" />
     <ClCompile Include="Pic.cpp" />
@@ -176,11 +170,6 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="shaderClass.cpp" />
-    <ClCompile Include="stb.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="VAO.cpp" />
-    <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Carte.txt" />
