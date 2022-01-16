@@ -30,6 +30,7 @@ int Perso::getv_saut()
 void Perso::setv_saut(int val)
 {
 	v_saut = val;
+
 }
 
 void Perso::Sauter(int vitesse) {

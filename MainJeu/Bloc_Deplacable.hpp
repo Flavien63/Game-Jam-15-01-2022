@@ -1,4 +1,7 @@
-#pragma once
+#ifndef __BLOC_DEPLACABLE_HPP__
+#define __BLOC_DEPLACABLE_HPP__
+
+#include "Map.hpp"
 #include "Bloc.hpp"
 const int dim = 50;
 
@@ -13,3 +16,5 @@ class Bloc_Deplacable: public Bloc
 		void deplacer(Map map);
 };
 
+
+#endif // !__BLOC_DEPLACABLE_HPP__

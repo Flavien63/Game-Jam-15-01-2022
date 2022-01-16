@@ -1,3 +1,6 @@
+#ifndef __ENTITE_HPP__
+#define __ENTITE_HPP__
+
 #include <typeinfo>
 #include <iostream>
 #include<glad/glad.h>
@@ -12,7 +15,7 @@
 
 using namespace std;
 
-#include "Bloc.hpp"
+//#include "Bloc.hpp"
 #include "Map.hpp"
 
 class Map;
@@ -59,3 +62,4 @@ public:
 
 bool operator== (Entite& a, Entite& b);
 
+#endif

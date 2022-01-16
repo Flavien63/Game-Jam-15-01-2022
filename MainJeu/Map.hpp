@@ -12,7 +12,7 @@
 class Bloc{};
 class Ennemi{};
 */
-class Entite;
+
 
 
 using namespace std;

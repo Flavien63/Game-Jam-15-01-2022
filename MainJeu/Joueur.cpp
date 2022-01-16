@@ -2,8 +2,7 @@
 #include "Perso.hpp"
 
 Joueur::Joueur()
-{
-	}
+{}
 
 Joueur::~Joueur()
 {

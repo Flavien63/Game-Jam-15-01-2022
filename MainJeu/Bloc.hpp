@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __BLOC_HPP__
+#define __BLOC_HPP__
+
 #include "Entite.hpp"
 
 class Bloc: public Entite
@@ -10,3 +12,5 @@ class Bloc: public Entite
 		virtual bool isActif() = 0;
 };
 
+
+#endif // !__BLOC_HPP__

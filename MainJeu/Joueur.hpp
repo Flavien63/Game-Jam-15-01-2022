@@ -7,7 +7,6 @@
 
 class Joueur : public Perso
 {
-	Texture texture;
 	int checkpoint;
 
 public:
