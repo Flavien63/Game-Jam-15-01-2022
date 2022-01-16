@@ -12,6 +12,7 @@ Map::Map() : _entites(nullptr)
 	}
 
 	chargerMap("./Carte.txt");
+	std::cout << "Map charge normalement";
 }
 
 void Map::chargerMap(string path)
