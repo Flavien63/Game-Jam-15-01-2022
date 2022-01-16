@@ -2,12 +2,12 @@
 
 Controller::Controller() : _joueur(), _map()
 {
-	
+	//_map.chargerMap("nomfichier")
 }
 
 void Controller::MouvementPerso()
 {
-
+	
 }
 
 void Controller::deplacementEntite()
