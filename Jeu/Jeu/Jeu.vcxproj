@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="matriceChargement.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="generationMatrice.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="generationMatrice.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
