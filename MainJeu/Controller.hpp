@@ -24,7 +24,7 @@ private:
 public:
 	Controller();
 	void MouvementPerso();
-	void deplacementPerso(Perso inPerso);
+	void deplacementEntite();
 	void afficherEntite();
 	
 

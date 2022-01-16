@@ -37,6 +37,7 @@ public:
 	void chargerMap(string path);
 	Entite getEntite(int );
 	int getLargeurBloc();
+	bool isBlocFixe(int x, int y);
 
 };
 

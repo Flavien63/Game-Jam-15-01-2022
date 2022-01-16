@@ -54,8 +54,8 @@ public:
 	Entite(int larg, int lng, int x, int y, int vx, int vy);
 
 
-	void deplacer(Map map);
-	bool estSol(Map map);
+	void deplacer();
+	bool estSol( Map& map);
 	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO);
 
 };

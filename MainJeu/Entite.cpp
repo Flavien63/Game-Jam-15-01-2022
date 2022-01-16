@@ -56,57 +56,29 @@ bool operator== (Entite& a, Entite& b)
 		&& a.getVity() == b.getVity());
 }
 
-void Entite::deplacer(Map map)
+void Entite::deplacer()
 {
-	int currEntiteXgrid, currEntiteYgrid;
-	bool checkX = true;
-	bool checkY = true;
-	int i = 0;
-	int posXgrid = (posx + vitx) / map.getLargeurBlock();
-	int posYgrid = (posy + vity) / map.getLargeurBlock();
-	if (!(map.matBlock[posXgrid][posYgrid])) {
-		while ((checkX || checkY) && i<nbEntite)
-		{
-			Entite currEntite = map.getEntite(i);
-			if (!(&currEntite == this) && (typeid(currEntite) == typeid(Bloc)))
-			{
-				checkX = checkX && !(posx + vitx + longueur >= currEntite.getPosx() && posx + vitx <= currEntite.getPosx() + currEntite.getLongueur());
-				checkY = checkY && !(posy + vity + hauteur >= currEntite.getPosy() && posy + vity <= currEntite.getPosy() + currEntite.getHauteur());
+		posx += vitx;
+		vitx = 0;
 
-			}
-			++i;
-		}
-
-		if (checkX) {
-			posx += vitx;
-		}
-		else {
-			vitx = 0;
-		}
-
-		if (checkY) {
-			posy += vity;
-		}
-		else {
-			vity = 0;
-		}
-	}
+		posy += vity;
+		vity = 0;
 
 }	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
 
 
-bool Entite::estSol(Map map)
+bool Entite::estSol( Map &map)
 {
-	bool check = (posx % map.getLargeurBloc() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
+	int posX = this->getPosx();
+	int posY = this->getPosy();
+	bool check;
+	check = map.isBlocFixe(posX / map.getLargeurBloc(), (posY - 1) / map.getLargeurBloc());
 	int i = 0;
-	while (check && i < nbEntite)
+	Entite autre;
+	while (!check && i < Entite::getNbEntite() - 1)
 	{
-		Entite currEntite = map.getEntite(i);
-		if (!(&currEntite == this) && (typeid(currEntite) == typeid(Bloc)))
-		{
-			check = check || (posx + longueur > currEntite.getPosx() && posx < currEntite.getPosx() + currEntite.getLongueur() &&
-				posy == currEntite.getPosy() + currEntite.getHauteur() + 1);
-		}
+		autre = map.getEntite(i);
+		check = check && !(posY == autre.getPosy() + autre.getHauteur() + 1);
 		++i;
 	}
 

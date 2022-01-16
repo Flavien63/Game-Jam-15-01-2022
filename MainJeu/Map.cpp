@@ -100,3 +100,8 @@ int Map::getLargeurBloc()
 {
 	return this->_largeurBloc;
 }
+
+bool Map::isBlocFixe(int x, int y)
+{
+	return this->_mapBlocFix[y][x] == 1 ? true : false;
+}
