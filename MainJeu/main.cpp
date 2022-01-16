@@ -1,4 +1,9 @@
 #include<iostream>
+#include<glad/glad.h>
+#include<GLFW/glfw3.h>
+#include<stb/stb_image.h>
+#include <stdlib.h>     
+#include <time.h>  
 
 
 #include"shaderClass.h"
@@ -36,8 +41,8 @@ void initvertice(GLfloat* vertices)
 
 void carre(GLfloat* vertices, double x, double y, int A, GLfloat a)
 {
-	GLfloat posx = x /(double)(A / 2);
-	GLfloat posy = y /(double)(A / 2);
+	GLfloat posx = x / (double)(A / 2);
+	GLfloat posy = y / (double)(A / 2);
 	vertices[0] = posx;
 	vertices[1] = posy;
 	vertices[5] = posx;
@@ -50,6 +55,8 @@ void carre(GLfloat* vertices, double x, double y, int A, GLfloat a)
 
 int main()
 {
+	//Entite::InitTexture();
+	srand(time(0));
 	// Initialize GLFW
 	glfwInit();
 
@@ -84,61 +91,45 @@ int main()
 	// Generates Shader object using shaders defualt.vert and default.frag
 	Shader shaderProgram("default.vert", "default.frag");
 
-	int widthImg, heightImg, numColCh;
-	stbi_set_flip_vertically_on_load(true);
-	unsigned char* bytes = stbi_load("MATHVDT.jpg", &widthImg, &heightImg, &numColCh, 0);
-	Texture MATHVDT("MATHVDT.jpg", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
-	MATHVDT.texUnit(shaderProgram, "tex0", 0);
+	Texture tabTexture[2] = { {"MATHVDT.jpg", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE },
+		{"super.jpg", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE} };
 
-	bytes = stbi_load("super.jpg", &widthImg, &heightImg, &numColCh, 0);
-	Texture Super("super.jpg", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
-	Super.texUnit(shaderProgram, "tex0", 0);
-	GLfloat vertices[20];
+	shaderProgram.Activate();
+	constexpr std::size_t nVertices = 20;
+
+	GLfloat vertices[nVertices];
 	initvertice(vertices);
 	GLfloat a = 0.1f;
 	VAO VAO1;
+	Entite tabbloc[25];
+
+	for (int k = 0; k < 5; k++)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			tabbloc[5 * k + i].setHauteur(50);
+			tabbloc[5 * k + i].setLongueur(50);
+			tabbloc[5 * k + i].setPosx(50 * k);
+			tabbloc[5 * k + i].setPosy(50 * i);
+			tabbloc[5 * k + i].setID(rand() % 2);
+		}
+	}
 
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
 		// Specify the color of the background
-		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+		glClearColor(0.17f, 0.13f, 0.17f, 1.0f);
 		// Clean the back buffer and assign the new color to it
 		glClear(GL_COLOR_BUFFER_BIT);
 		// Tell OpenGL which Shader Program we want to use
-		shaderProgram.Activate();
-		carre(vertices, -100.2, -100.2, 400, 0.5f);
-		VAO1.Bind();
-		VBO VBO1(vertices, sizeof(vertices));
-		EBO EBO1(indices, sizeof(indices));
-		VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 5 * sizeof(float), (void*)0);
-		VAO1.LinkAttrib(VBO1, 1, 2, GL_FLOAT, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-		
-		VAO1.Unbind();
-		VBO1.Unbind();
-		EBO1.Unbind();
-		VBO1.Delete();
-		EBO1.Delete();
-		Super.Bind();
-		VAO1.Bind();
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		VAO1.Unbind();
+		for (int k = 0; k < 25; k++)
+		{
+			GLfloat posx = (100.0f - tabbloc[k].getPosx()) / 800.0f;
+			GLfloat posy = (100.0f - tabbloc[k].getPosy()) / 800.0f;
+			tabbloc[k].affiche(posx, posy, vertices, nVertices, VAO1, tabTexture);
+		}
 
-		carre(vertices, 150.2, 100.2, 400, 0.5f);
-		VAO1.Bind();
-		VBO VBO2(vertices, sizeof(vertices));
-		EBO EBO2(indices, sizeof(indices));
-		VAO1.LinkAttrib(VBO2, 0, 3, GL_FLOAT, 5 * sizeof(float), (void*)0);
-		VAO1.LinkAttrib(VBO2, 1, 2, GL_FLOAT, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-		VAO1.Unbind();
-		VBO2.Unbind();
-		EBO2.Unbind();
-		VBO2.Delete();
-		EBO2.Delete();
-		MATHVDT.Bind();
-		VAO1.Bind();
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		
 
 
 		glfwSwapBuffers(window);
@@ -150,8 +141,6 @@ int main()
 
 	// Delete all the objects we've created
 	VAO1.Delete();
-	MATHVDT.Delete();
-	Super.Delete();
 	shaderProgram.Delete();
 	// Delete window before ending the program
 	glfwDestroyWindow(window);
