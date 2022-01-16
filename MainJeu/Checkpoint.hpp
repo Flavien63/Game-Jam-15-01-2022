@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __CHECKPOINT_HPP__
+#define __CHECKPOINT_HPP__
+
 #include "Bloc.hpp"
 
 class Checkpoint :
@@ -6,3 +8,5 @@ class Checkpoint :
 {
 };
 
+
+#endif // !__CHECKPOINT_HPP__
