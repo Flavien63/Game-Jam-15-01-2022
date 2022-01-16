@@ -1,4 +1,8 @@
 #pragma once
+#ifndef __ITEM_h__
+#define __ITEM_h__
+
+
 #include "Bloc.hpp"
 
 class Item : public Bloc
@@ -14,3 +18,5 @@ public:
 	void setType(int typ);
 };
 
+
+#endif // !__ITEM_h__
