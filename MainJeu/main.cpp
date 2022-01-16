@@ -8,10 +8,12 @@
 
 #include"shaderClass.h"
 #include"Entite.hpp"
+#include"Plateforme.hpp"
 #include"Texture.h"
 #include"VAO.h"
 #include"VBO.h"
 #include"EBO.h"
+#include"Controller.hpp"
 
 
 // Indices for vertices order
@@ -81,7 +83,7 @@ int main()
 	// In this case the viewport goes from x = 0, y = 0, to x = 800, y = 800
 	glViewport(0, 0, 800, 800);
 
-
+	Controller map{};
 
 	// Generates Shader object using shaders defualt.vert and default.frag
 	Shader shaderProgram("default.vert", "default.frag");
@@ -110,6 +112,8 @@ int main()
 		}
 	}
 
+	Plateforme Nathan(100, 200, 250, 250, 0, 0, 100, 100, 20);
+
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
@@ -122,8 +126,13 @@ int main()
 		{
 			GLfloat posx = (100.0f - tabbloc[k].getPosx()) / 800.0f;
 			GLfloat posy = (100.0f - tabbloc[k].getPosy()) / 800.0f;
-			tabbloc[k].affiche(posx, posy, vertices, VAO1, tabTexture);
+			tabbloc[k].affiche(posx, posy, vertices,nVertices, VAO1, tabTexture);
 		}
+		Nathan.deplacer();
+		GLfloat posx = (100.0f - Nathan.getPosx()) / 800.0f;
+		GLfloat posy = (100.0f - Nathan.getPosy()) / 800.0f;
+		Nathan.affiche(posx, posy, vertices, nVertices, VAO1, tabTexture);
+		map.afficherMap(vertices, nVertices,VAO1,tabTexture);
 
 
 

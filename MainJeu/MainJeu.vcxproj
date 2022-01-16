@@ -157,7 +157,6 @@
     <ClInclude Include="Plateforme.hpp" />
     <ClInclude Include="Entite.hpp" />
     <ClInclude Include="Controller.hpp" />
-    <ClInclude Include="Main.hpp" />
     <ClInclude Include="Map.hpp" />
     <ClInclude Include="shaderClass.h" />
     <ClInclude Include="Texture.h" />
@@ -173,6 +172,7 @@
     <ClCompile Include="Ennemi.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Perso.cpp" />
     <ClCompile Include="Pic.cpp" />
     <ClCompile Include="Plateforme.cpp" />

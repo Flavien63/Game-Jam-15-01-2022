@@ -30,7 +30,6 @@ class Entite
 	int vity;
 	static int nbEntite;
 	int IDtexture;
-	static Texture* tabTexture;
 
 public:
 	int getHauteur();
@@ -40,6 +39,7 @@ public:
 	int getVitx();
 	int getVity();
 	static int getNbEntite();
+	int getID();
 
 	void setHauteur(int l);
 	void setLongueur(int l);
@@ -49,14 +49,15 @@ public:
 	void setVity(int vy);
 	void setVitesse(int vx, int vy);
 	static void InitTexture();
+	void setID(int id);
 
 	Entite();
-	Entite(int larg, int lng, int x, int y, int vx, int vy);
+	Entite(int larg, int lng, int x, int y, int vx, int vy,int id);
 
 
 	void deplacer();
 	//bool estSol( Map& map);
-	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO);
+	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, std::size_t nVertices, VAO& VAO1, Texture* tabTexture);
 
 };
 

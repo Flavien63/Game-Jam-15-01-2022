@@ -26,6 +26,7 @@ public:
 	void MouvementPerso(int dirH, int dirV);
 	void deplacementEntite();
 	void afficherEntite();
+	void afficherMap(GLfloat* vertices, std::size_t nVertices, VAO& VAO1, Texture* tabTexture);
 	
 
 };

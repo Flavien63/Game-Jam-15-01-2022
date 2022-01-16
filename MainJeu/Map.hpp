@@ -29,11 +29,11 @@ using namespace std;
 class Map
 {
 private:
-	const int _largeurBloc = 10;
+	const int _largeurBloc = 60;
 
-	const int _longueurMap = 11;
-	const int _hauteurMap = 4;
-	int _mapBlocFix[4][11];
+	const int _longueurMap = 100;
+	const int _hauteurMap = 50;
+	int _mapBlocFix[50][100];
 
 	const int _nbMaxEntites = 50;
 	Entite * _entites ;

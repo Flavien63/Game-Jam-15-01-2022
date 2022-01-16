@@ -16,6 +16,12 @@ void Controller::MouvementPerso(int dirH, int dirV)
 
 }
 
+GLuint indices2[] =
+{
+	0,1,2,
+	0,2,3
+};
+
 void Controller::deplacementEntite()
 {
 
@@ -100,4 +106,43 @@ void Controller::afficherEntite()
 	}
 }
 
-
+void Controller::afficherMap(GLfloat* vertices, std::size_t nVertices, VAO& VAO1, Texture* tabTexture)
+{
+	for (int k = 0; k < 50;k++)
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			if (_map.isBlocFixe(i, k))
+			{
+				GLfloat posx = (_joueur.getPosx() - i*60) / 800.0f;				
+				GLfloat posy = (_joueur.getPosy() - k*60) / 800.0f;
+				if (posx > -1.1f && posx<1.1f && posy>-1.1f && posy < 1.1f)
+				{
+					vertices[0] = posx;
+					vertices[1] = posy;
+					vertices[5] = posx;
+					vertices[6] = posy + (60.0f / 800.0f);
+					vertices[10] = posx + (60.0f / 800.0f);
+					vertices[11] = posy + (60.0f / 800.0f);
+					vertices[15] = posx + (60.0f / 800.0f);
+					vertices[16] = posy;
+					VAO1.Bind();
+					VBO VBO1(vertices, nVertices * sizeof(*vertices));
+					EBO EBO1(indices2, sizeof(indices2));
+					VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 5 * sizeof(float), (void*)0);
+					VAO1.LinkAttrib(VBO1, 1, 2, GL_FLOAT, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+					VAO1.Unbind();
+					VBO1.Unbind();
+					EBO1.Unbind();
+					VBO1.Delete();
+					EBO1.Delete();
+					tabTexture[0].Bind();
+					VAO1.Bind();
+					glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+					VAO1.Unbind();
+				}
+			}
+		}
+	}
+	//_map.isBlocFixe(x, y);
+}
