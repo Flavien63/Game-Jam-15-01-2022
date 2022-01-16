@@ -1,13 +1,19 @@
 #ifndef __MAP_HPP__
 #define __MAP_HPP__
 
-class Bloc{};
-class Ennemi{};
-class Entite{};
 
 #include <string>
 #include <iostream>
 #include <fstream>
+
+#include "Entite.hpp"
+
+/*
+class Bloc{};
+class Ennemi{};
+*/
+class Entite;
+
 
 using namespace std;
 
@@ -21,12 +27,12 @@ private:
 	int _mapBlocFix[4][11];
 
 	const int _nbMaxEntites = 50;
-	Entite _entites[10];
+	Entite * _entites ;
 
 public:
 	Map();
 	void chargerMap(string path);
-	Entite getEntite(int i);
+	Entite getEntite(int );
 	int getLargeurBloc();
 
 };

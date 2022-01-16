@@ -1,7 +1,13 @@
 #pragma once
 #include <typeinfo>
 #include <iostream>
+
 using namespace std;
+
+#include "Bloc.hpp"
+#include "Map.hpp"
+
+class Map;
 
 class Entite
 {
@@ -29,8 +35,8 @@ public:
 	void setVity(int vy);
 	void setVitesse(int vx, int vy);
 
+	Entite();
 	Entite(int larg, int lng, int x, int y, int vx, int vy);
-
 
 
 	void deplacer(Map map);

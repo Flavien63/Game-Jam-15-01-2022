@@ -1,6 +1,6 @@
 #include "Map.hpp"
 
-Map::Map() 
+Map::Map() : _entites(nullptr)
 {
 	//memset(_matBlocFix, )
 	for (int j = 0; j < _hauteurMap; j++)
@@ -22,7 +22,7 @@ void Map::chargerMap(string path)
 	if (monFlux)
 	{
 
-		for (int i = 0; i < _hauteurMap ; i++)
+		for (int i = 0; i < _hauteurMap; i++)
 		{
 			for (int j = 0; j < _longueurMap; j++)
 			{
@@ -43,8 +43,8 @@ void Map::chargerMap(string path)
 					break;
 				case BlocSpecialDeplacable:
 					break;
-				//case BlocSpecialPateforme: // Lu après la map
-					//break;
+					//case BlocSpecialPateforme: // Lu après la map
+						//break;
 				case BlockSpecialChekpoint:
 					break;
 				case BlockSpecialPic:
@@ -59,9 +59,13 @@ void Map::chargerMap(string path)
 		}
 
 		int nbPlateformes;
+
 		int nbFrames;
 		int posAx, posAy, posBx, posBy;
 		monFlux >> nbPlateformes; // Nombre de plateforme
+
+		this->_entites = new Entite[nbPlateformes];
+
 		for (int k = 0; k < nbPlateformes; k++)
 		{
 			monFlux >> nbFrames;
@@ -77,18 +81,18 @@ void Map::chargerMap(string path)
 	{
 		cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
 	}
-	
+
 }
 
 Entite Map::getEntite(int i)
 {
 	if (i < 0 || i >= 100)
 	{
-		cout << "Index en dehors du tableau d'entites"<<endl;
+		cout << "Index en dehors du tableau d'entites" << endl;
 	}
 	else
 	{
-		return _entites[i];	
+		return _entites[i];
 	}
 }
 

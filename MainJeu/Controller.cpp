@@ -21,7 +21,7 @@ void Controller::afficherEntite()
 
 	int entitePosX, entitePosY;
 
-	for (int i = 0; i < Entite::nbEntite-1; i++)
+	for (int i = 0; i < Entite::getNbEntite - 1; i++)
 	{
 		entitePosX = _map.getEntite(i).getPosx();
 		entitePosY = _map.getEntite(i).getPosy();

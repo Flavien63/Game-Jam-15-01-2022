@@ -5,7 +5,7 @@
 
 #include "Perso.hpp"
 
-class Joueur
+class Joueur : public Perso
 {
 	Texture texture;
 	int checkpoint;

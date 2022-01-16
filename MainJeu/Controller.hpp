@@ -4,11 +4,13 @@
 #include <cstdlib>
 #include "Map.hpp"
 #include "Entite.hpp"
+#include "Joueur.hpp"
 
-
+/*
 class Joueur{};
 class Perso {};
-//class Map{};
+class Map{};
+*/
 
 class Controller
 {

@@ -16,6 +16,10 @@ void Entite::setVity(int vy)	{ vity = vy; }
 void Entite::setVitesse(int vx, int vy) { vitx = vx; vity = vy; }
 
 
+Entite::Entite()
+{
+}
+
 Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
 {
 	hauteur = larg;
@@ -77,7 +81,7 @@ void Entite::deplacer(Map map)
 
 bool Entite::estSol(Map map)
 {
-	bool check = (posx % map.getLargeurBlock() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
+	bool check = (posx % map.getLargeurBloc() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
 	int i = 0;
 	while (check && i < nbEntite)
 	{
