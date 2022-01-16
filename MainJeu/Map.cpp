@@ -93,7 +93,7 @@ void Map::chargerMap(string path)
 	{
 		cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
 	}
-
+	monFlux.close();
 }
 
 Entite Map::getEntite(int i)

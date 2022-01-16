@@ -122,7 +122,7 @@ int main()
 		// Clean the back buffer and assign the new color to it
 		glClear(GL_COLOR_BUFFER_BIT);
 		// Tell OpenGL which Shader Program we want to use
-		for (int k = 0; k < 25; k++)
+		/*for (int k = 0; k < 25; k++)
 		{
 			GLfloat posx = (100.0f - tabbloc[k].getPosx()) / 800.0f;
 			GLfloat posy = (100.0f - tabbloc[k].getPosy()) / 800.0f;
@@ -131,7 +131,7 @@ int main()
 		Nathan.deplacer();
 		GLfloat posx = (100.0f - Nathan.getPosx()) / 800.0f;
 		GLfloat posy = (100.0f - Nathan.getPosy()) / 800.0f;
-		Nathan.affiche(posx, posy, vertices, nVertices, VAO1, tabTexture);
+		Nathan.affiche(posx, posy, vertices, nVertices, VAO1, tabTexture);*/
 		map.afficherMap(vertices, nVertices,VAO1,tabTexture);
 
 

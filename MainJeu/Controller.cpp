@@ -1,8 +1,8 @@
 #include "Controller.hpp"
 
-Controller::Controller() : _joueur(), _map()
+Controller::Controller() : _joueur(100,200,20*60,45*60,1,1), _map()
 {
-	//_map.chargerMap("nomfichier")
+	_map.chargerMap("Carte.txt");
 }
 
 void Controller::MouvementPerso(int dirH, int dirV)
@@ -116,8 +116,6 @@ void Controller::afficherMap(GLfloat* vertices, std::size_t nVertices, VAO& VAO1
 			{
 				GLfloat posx = (_joueur.getPosx() - i*60) / 800.0f;				
 				GLfloat posy = (_joueur.getPosy() - k*60) / 800.0f;
-				if (posx > -1.1f && posx<1.1f && posy>-1.1f && posy < 1.1f)
-				{
 					vertices[0] = posx;
 					vertices[1] = posy;
 					vertices[5] = posx;
@@ -140,9 +138,7 @@ void Controller::afficherMap(GLfloat* vertices, std::size_t nVertices, VAO& VAO1
 					VAO1.Bind();
 					glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 					VAO1.Unbind();
-				}
 			}
 		}
 	}
-	//_map.isBlocFixe(x, y);
 }
