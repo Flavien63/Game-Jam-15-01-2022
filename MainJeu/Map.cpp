@@ -82,7 +82,7 @@ void Map::chargerMap(string path)
 			monFlux >> posBy;
 			monFlux >> nbFrames;
 
-			Plateforme(_largeurBloc, _largeurBloc,
+			_entites[Entite::getNbEntite() - 1]=Plateforme(_largeurBloc, _largeurBloc,
 				posAx, posAy, posAx, posAy, posBx, posBy, nbFrames);
 		}
 	}
