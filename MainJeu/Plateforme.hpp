@@ -21,7 +21,7 @@ class Plateforme : public Bloc
 		Plateforme(int largeur, int longeur, int posx, int posy, int new_posAx, int new_posAy, int new_posBx, int new_posBy, int nb_frame);
 		static void rendreActif();
 		bool isActif();
-		void deplacer(Map map);
+		void deplacer();
 };
 
 #endif // !#define__PALTEFORME_HPP__

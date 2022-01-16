@@ -90,10 +90,9 @@ Entite Map::getEntite(int i)
 	{
 		cout << "Index en dehors du tableau d'entites" << endl;
 	}
-	else
-	{
+
 		return _entites[i];
-	}
+	
 }
 
 int Map::getLargeurBloc()

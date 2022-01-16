@@ -12,7 +12,6 @@ void Controller::MouvementPerso()
 
 void Controller::deplacementEntite()
 {
-	int currEntiteXgrid, currEntiteYgrid;
 
 	bool checkX, checkY = true;
 	Entite e;

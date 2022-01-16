@@ -45,5 +45,5 @@ void Perso::Interagir(Bloc_Jump bj) {
 
 void Perso::Interragir(Bloc_Deplacable bd, Map map) {
 	bd.setVitx(this->getVitx());					//vitesse du bloc identique a celle du perso
-	bd.deplacer(map);	
+	bd.deplacer();	
 }
