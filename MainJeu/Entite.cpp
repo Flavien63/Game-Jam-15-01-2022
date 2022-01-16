@@ -22,10 +22,7 @@ const GLuint indices[] =
 };
 
 
-void Entite::InitTexture()
-{
-	//TO DO
-}
+Entite::Entite() :hauteur(0), longueur(0), posx(0), posy(0), vitx(0), vity(0), IDtexture(0){}
 
 Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
 {
@@ -47,63 +44,11 @@ bool operator== (Entite& a, Entite& b)
 		&& a.getVity() == b.getVity());
 }
 
-void Entite::deplacer(Map map)
-{
-	int currEntiteXgrid, currEntiteYgrid;
-	bool checkX = true;
-	bool checkY = true;
-	int i = 0;
-	int posXgrid = (posx + vitx) / map.getLargeurBlock();
-	int posYgrid = (posy + vity) / map.getLargeurBlock();
-	if (!(map.matBlock[posXgrid][posYgrid])) {
-		while ((checkX || checkY) && i<nbEntite)
-		{
-			Entite currEntite = map.getEntite(i);
-			if (!(&currEntite == this) && (typeid(currEntite) == typeid(Bloc)))
-			{
-				checkX = checkX && !(posx + vitx + longueur >= currEntite.getPosx() && posx + vitx <= currEntite.getPosx() + currEntite.getLongueur());
-				checkY = checkY && !(posy + vity + hauteur >= currEntite.getPosy() && posy + vity <= currEntite.getPosy() + currEntite.getHauteur());
-
-			}
-			++i;
-		}
-
-		if (checkX) {
-			posx += vitx;
-		}
-		else {
-			vitx = 0;
-		}
-
-		if (checkY) {
-			posy += vity;
-		}
-		else {
-			vity = 0;
-		}
-	}
-
-}	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
+void Entite::deplacer()
+{}	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
 
 
-bool Entite::estSol(Map map)
-{
-	bool check = (posx % map.getLargeurBlock() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
-	int i = 0;
-	while (check && i < nbEntite)
-	{
-		Entite currEntite = map.getEntite(i);
-		if (!(&currEntite == this) && (typeid(currEntite) == typeid(Bloc)))
-		{
-			check = check || (posx + longueur > currEntite.getPosx() && posx < currEntite.getPosx() + currEntite.getLongueur() &&
-				posy == currEntite.getPosy() + currEntite.getHauteur() + 1);
-		}
-		++i;
-	}
-
-}
-
-void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1)
+void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1, Texture* tabTexture)
 {
 	vertices[0] = posx;
 	vertices[1] = posy;
@@ -114,7 +59,7 @@ void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1)
 	vertices[15] = posx + longueur;
 	vertices[16] = posy;
 	VAO1.Bind();
-	VBO VBO1(vertices, sizeof(vertices));
+	VBO VBO1(vertices, 20*sizeof(*vertices));
 	EBO EBO1(indices, sizeof(indices));
 	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 5 * sizeof(float), (void*)0);
 	VAO1.LinkAttrib(VBO1, 1, 2, GL_FLOAT, 5 * sizeof(float), (void*)(3 * sizeof(float)));

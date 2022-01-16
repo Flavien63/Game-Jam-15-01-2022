@@ -15,11 +15,6 @@
 
 
 // Indices for vertices order
-GLuint indices[] =
-{
-	0,1,2,
-	0,2,3
-};
 
 
 
@@ -127,7 +122,7 @@ int main()
 		{
 			GLfloat posx = (100.0f - tabbloc[k].getPosx()) / 800.0f;
 			GLfloat posy = (100.0f - tabbloc[k].getPosy()) / 800.0f;
-			tabbloc[k].affiche(posx, posy, vertices, nVertices, VAO1, tabTexture);
+			tabbloc[k].affiche(posx, posy, vertices, VAO1, tabTexture);
 		}
 
 

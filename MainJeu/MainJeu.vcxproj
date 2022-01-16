@@ -72,16 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <IncludePath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\include;C:\Users\mavilledie4\Desktop\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\lib;C:\Users\mavilledie4\Desktop\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\include;C:\Users\mavilledie4\Desktop\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\lib;C:\Users\mavilledie4\Desktop\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

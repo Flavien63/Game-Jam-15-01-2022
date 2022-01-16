@@ -1,3 +1,6 @@
+#ifndef ENTITE_H
+#define ENTITE_H
+
 #include <typeinfo>
 #include <iostream>
 #include<glad/glad.h>
@@ -22,7 +25,6 @@ class Entite
 	int vity;
 	static int nbEntite;
 	int IDtexture;
-	static Texture* tabTexture;
 
 public:
 	int getHauteur();
@@ -39,17 +41,17 @@ public:
 	void setVitx(int vx);
 	void setVity(int vy);
 	void setVitesse(int vx, int vy);
-	static void InitTexture();
-
+	void setID(int id);
+	Entite();
 	Entite(int larg, int lng, int x, int y, int vx, int vy);
 
 
 
-	void deplacer(Map map);
-	bool estSol(Map map);
-	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO);
+	void deplacer();
+	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO, Texture* tabTexture);
 
 };
 
 bool operator== (Entite& a, Entite& b);
 
+#endif
