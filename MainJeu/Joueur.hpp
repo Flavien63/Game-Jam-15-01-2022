@@ -14,6 +14,7 @@ public:
 	~Joueur();
 	void CheckpointUp();
 	void CheckpointDown();
+	void CheckpointRAZ();
 	int getCheckpoint();
 };
 

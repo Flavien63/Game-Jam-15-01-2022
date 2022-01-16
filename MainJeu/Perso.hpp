@@ -4,15 +4,10 @@
 #define __PERSO_HPP__
 
 #include "Entite.hpp"
-#include "Map.hpp"
+//#include "Map.hpp"
 #include "Bloc.hpp"
 #include "Bloc_Deplacable.hpp"
 #include "Bloc_Jump.hpp"
-
-/*
-class Texture{};
-class Map{};
-*/
 
 class Perso : public Entite
 {

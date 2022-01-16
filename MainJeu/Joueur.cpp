@@ -1,8 +1,9 @@
 #include "Joueur.hpp"
-#include "Perso.hpp"
 
-Joueur::Joueur()
-{}
+Joueur::Joueur():
+	checkpoint(0)
+{
+}
 
 Joueur::~Joueur()
 {
@@ -17,6 +18,11 @@ void Joueur::CheckpointUp()
 void Joueur::CheckpointDown()
 {
 	checkpoint--;
+}
+
+void Joueur::CheckpointRAZ()
+{
+	checkpoint=0;
 }
 
 int Joueur::getCheckpoint()
