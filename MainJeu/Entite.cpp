@@ -1,6 +1,6 @@
 #include "Entite.hpp"
 
-Entite::nbEntite=0;
+int Entite::nbEntite=0;
 
 int Entite::getHauteur() { return hauteur; }
 int Entite::getLongueur() { return longueur; }
@@ -8,7 +8,7 @@ int Entite::getPosx() { return posx; }
 int Entite::getPosy() { return posy; }
 int Entite::getVitx() { return vitx; }
 int Entite::getVity() { return vity; }
-static int Entite::getNbEntite() {return nbEntite};
+int Entite::getNbEntite() { return nbEntite; }
 
 
 void Entite::setHauteur(int l)	{ hauteur = l; }
@@ -29,6 +29,10 @@ const GLuint indices[] =
 void Entite::InitTexture()
 {
 	//TO DO
+}
+
+Entite::Entite()
+{
 }
 
 Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
@@ -93,7 +97,7 @@ void Entite::deplacer(Map map)
 
 bool Entite::estSol(Map map)
 {
-	bool check = (posx % map.getLargeurBlock() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
+	bool check = (posx % map.getLargeurBloc() == 0 && map.tabBlockFixe[posx % map.getLargeurBlock()] == 0); //check entite
 	int i = 0;
 	while (check && i < nbEntite)
 	{

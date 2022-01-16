@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -72,16 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\ramal\Documents\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\include;C:\Users\mavilledie4\Desktop\Game-Jam-15-01-2022\MainJeu\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\desno\source\repos\Game-Jam-15-01-2022\MainJeu\Libraries\lib;C:\Users\mavilledie4\Desktop\Game-Jam-15-01-2022\MainJeu\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -145,14 +145,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <ClInclude Include="Bloc.hpp" />
+    <ClInclude Include="Bloc_Deplacable.hpp" />
+    <ClInclude Include="Bloc_Jump.hpp" />
+    <ClInclude Include="Checkpoint.hpp" />
+    <ClInclude Include="EBO.h" />
+    <ClInclude Include="Ennemi.hpp" />
+    <ClInclude Include="Joueur.hpp" />
+    <ClInclude Include="Perso.hpp" />
+    <ClInclude Include="Pic.hpp" />
+    <ClInclude Include="Plateforme.hpp" />
+    <ClInclude Include="Entite.hpp" />
+    <ClInclude Include="Controller.hpp" />
+    <ClInclude Include="Main.hpp" />
+    <ClInclude Include="Map.hpp" />
+    <ClInclude Include="shaderClass.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="VAO.h" />
+    <ClInclude Include="VBO.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bloc.cpp" />
+    <ClCompile Include="Bloc_Deplacable.cpp" />
+    <ClCompile Include="Bloc_Jump.cpp" />
+    <ClCompile Include="Checkpoint.cpp" />
     <ClCompile Include="EBO.cpp" />
-    <ClCompile Include="Entite.cpp" />
+    <ClCompile Include="Ennemi.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="Perso.cpp" />
+    <ClCompile Include="Pic.cpp" />
+    <ClCompile Include="Plateforme.cpp" />
+    <ClCompile Include="Entite.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="shaderClass.cpp" />
     <ClCompile Include="stb.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -160,25 +187,9 @@
     <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EBO.h" />
-    <ClInclude Include="Bloc.hpp" />
-    <ClInclude Include="Bloc_Deplacable.hpp" />
-    <ClInclude Include="Bloc_Jump.hpp" />
-    <ClInclude Include="Entite.hpp" />
-    <ClInclude Include="shaderClass.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="VAO.h" />
-    <ClInclude Include="VBO.h" />
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="Plateforme.hpp" />
+    <Text Include="Carte.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bloc.cpp" />
-    <ClCompile Include="Bloc_Deplacable.cpp" />
-    <ClCompile Include="Bloc_Jump.cpp" />
-    <ClCompile Include="Entite.cpp" />
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Plateforme.cpp" />
     <Image Include="MATHVDT.jpg" />
     <Image Include="super.jpg" />
   </ItemGroup>

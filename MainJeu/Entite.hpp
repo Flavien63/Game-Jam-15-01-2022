@@ -1,3 +1,6 @@
+#ifndef __ENTITE_HPP__
+#define __ENTITE_HPP__
+
 #include <typeinfo>
 #include <iostream>
 #include<glad/glad.h>
@@ -11,6 +14,11 @@
 #include"shaderClass.h"
 
 using namespace std;
+
+//#include "Bloc.hpp"
+#include "Map.hpp"
+
+class Map;
 
 class Entite
 {
@@ -42,8 +50,8 @@ public:
 	void setVitesse(int vx, int vy);
 	static void InitTexture();
 
+	Entite();
 	Entite(int larg, int lng, int x, int y, int vx, int vy);
-
 
 
 	void deplacer(Map map);
@@ -54,3 +62,4 @@ public:
 
 bool operator== (Entite& a, Entite& b);
 
+#endif
