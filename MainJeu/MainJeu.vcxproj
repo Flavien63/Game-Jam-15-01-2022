@@ -139,6 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bloc.hpp" />
+    <ClInclude Include="Bloc_Deplacable.hpp" />
+    <ClInclude Include="Bloc_Jump.hpp" />
+    <ClInclude Include="Plateforme.hpp" />
+    <ClInclude Include="Entite.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bloc.cpp" />
+    <ClCompile Include="Bloc_Deplacable.cpp" />
+    <ClCompile Include="Bloc_Jump.cpp" />
+    <ClCompile Include="Plateforme.cpp" />
+    <ClCompile Include="Entite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Controller.hpp" />
     <ClInclude Include="Entite.hpp" />
     <ClInclude Include="Map.hpp" />
