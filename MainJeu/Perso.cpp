@@ -1,8 +1,8 @@
 #include "Perso.hpp"
 #include "Bloc_Jump.hpp"
 
-Perso::Perso() : 
-	PV(5), v_saut(1)
+Perso::Perso(int larg, int lng, int x, int y, int vx, int vy) :
+	Entite(larg,lng,x,y,vx,vy), PV(5), v_saut(1)
 {
 
 }

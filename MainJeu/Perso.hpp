@@ -4,7 +4,7 @@
 #define __PERSO_HPP__
 
 #include "Entite.hpp"
-//#include "Map.hpp"
+#include "Map.hpp"
 #include "Bloc.hpp"
 #include "Bloc_Deplacable.hpp"
 #include "Bloc_Jump.hpp"
@@ -15,7 +15,7 @@ class Perso : public Entite
 	int v_saut;
 
 public:
-	Perso();
+	Perso(int, int, int, int, int, int);
 	~Perso();
 	int getPV();
 	void PVUp();
