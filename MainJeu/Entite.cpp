@@ -1,4 +1,5 @@
 #include "Entite.hpp"
+#include "Bloc.hpp"
 
 int Entite::nbEntite=0;
 
