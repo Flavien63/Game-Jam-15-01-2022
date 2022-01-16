@@ -178,7 +178,6 @@
     <ClCompile Include="Plateforme.cpp" />
     <ClCompile Include="Entite.cpp" />
     <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="shaderClass.cpp" />
     <ClCompile Include="stb.cpp" />

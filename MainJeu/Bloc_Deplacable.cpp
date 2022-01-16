@@ -17,7 +17,7 @@ bool Bloc_Deplacable::isActif()
 	return actif;
 }
 
-void Bloc_Deplacable::deplacer(Map map)
+void Bloc_Deplacable::deplacer()
 {
-	Entite::deplacer(map);
+	Entite::deplacer();
 }

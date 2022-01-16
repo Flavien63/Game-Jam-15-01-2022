@@ -21,7 +21,7 @@ bool Plateforme::isActif()
 	return actif;
 }
 
-void Plateforme::deplacer(Map map)
+void Plateforme::deplacer()
 {
 	//Si on se trouve � l'une des extr�mit�es du trajet de la plateforme,
 	//sens change de valeur pour que la plateforme effectue le trajet dans l'autre sens;
@@ -32,6 +32,6 @@ void Plateforme::deplacer(Map map)
 	}
 	else
 	{
-		Entite::deplacer(map);
+		Entite::deplacer();
 	}
 }

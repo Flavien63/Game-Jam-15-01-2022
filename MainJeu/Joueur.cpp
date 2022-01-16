@@ -5,6 +5,11 @@ Joueur::Joueur():
 {
 }
 
+Joueur::Joueur(int larg, int lng, int x, int y, int vx, int vy):
+	Perso(larg,lng,x,y,0,0)
+{
+}
+
 Joueur::~Joueur()
 {
 

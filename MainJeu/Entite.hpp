@@ -1,5 +1,5 @@
-#ifndef ENTITE_H
-#define ENTITE_H
+#ifndef __ENTITE_HPP__
+#define __ENTITE_HPP__
 
 #include <typeinfo>
 #include <iostream>
@@ -15,6 +15,11 @@
 
 using namespace std;
 
+//#include "Bloc.hpp"
+//#include "Map.hpp"
+
+class Map;
+
 class Entite
 {
 	int hauteur;
@@ -25,6 +30,7 @@ class Entite
 	int vity;
 	static int nbEntite;
 	int IDtexture;
+	static Texture* tabTexture;
 
 public:
 	int getHauteur();
@@ -33,6 +39,7 @@ public:
 	int getPosy();
 	int getVitx();
 	int getVity();
+	static int getNbEntite();
 
 	void setHauteur(int l);
 	void setLongueur(int l);
@@ -41,14 +48,15 @@ public:
 	void setVitx(int vx);
 	void setVity(int vy);
 	void setVitesse(int vx, int vy);
-	void setID(int id);
+	static void InitTexture();
+
 	Entite();
 	Entite(int larg, int lng, int x, int y, int vx, int vy);
 
 
-
 	void deplacer();
-	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO, Texture* tabTexture);
+	//bool estSol( Map& map);
+	void affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO);
 
 };
 

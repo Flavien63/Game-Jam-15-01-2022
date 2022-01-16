@@ -1,4 +1,7 @@
 #include "Entite.hpp"
+#include "Bloc.hpp"
+
+int Entite::nbEntite=0;
 
 int Entite::getHauteur() { return hauteur; }
 int Entite::getLongueur() { return longueur; }
@@ -6,6 +9,8 @@ int Entite::getPosx() { return posx; }
 int Entite::getPosy() { return posy; }
 int Entite::getVitx() { return vitx; }
 int Entite::getVity() { return vity; }
+int Entite::getNbEntite() { return nbEntite; }
+
 
 void Entite::setHauteur(int l)	{ hauteur = l; }
 void Entite::setLongueur(int l) { longueur = l; }
@@ -22,7 +27,14 @@ const GLuint indices[] =
 };
 
 
-Entite::Entite() :hauteur(0), longueur(0), posx(0), posy(0), vitx(0), vity(0), IDtexture(0){}
+void Entite::InitTexture()
+{
+	//TO DO
+}
+
+Entite::Entite()
+{
+}
 
 Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
 {
@@ -32,6 +44,7 @@ Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
 	posy = y;
 	vitx = x;
 	vity = y;
+	nbEntite++;
 }
 
 bool operator== (Entite& a, Entite& b)
@@ -45,10 +58,16 @@ bool operator== (Entite& a, Entite& b)
 }
 
 void Entite::deplacer()
-{}	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
+{
+		posx += vitx;
+		vitx = 0;
 
+		posy += vity;
+		vity = 0;
 
-void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1, Texture* tabTexture)
+}	//rajouter deplacement sur plateforme, gerer deplacement vers mur midair
+
+void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1)
 {
 	vertices[0] = posx;
 	vertices[1] = posy;
@@ -59,7 +78,7 @@ void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1, T
 	vertices[15] = posx + longueur;
 	vertices[16] = posy;
 	VAO1.Bind();
-	VBO VBO1(vertices, 20*sizeof(*vertices));
+	VBO VBO1(vertices, sizeof(vertices));
 	EBO EBO1(indices, sizeof(indices));
 	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 5 * sizeof(float), (void*)0);
 	VAO1.LinkAttrib(VBO1, 1, 2, GL_FLOAT, 5 * sizeof(float), (void*)(3 * sizeof(float)));

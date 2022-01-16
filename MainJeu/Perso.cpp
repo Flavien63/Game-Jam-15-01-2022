@@ -7,6 +7,11 @@ Perso::Perso() :
 
 }
 
+Perso::Perso(int larg, int lng, int x, int y, int vx, int vy):
+	Entite(larg,lng,x,y,0,0), PV(5), v_saut(1)
+{
+}
+
 Perso::~Perso() {
 
 }
@@ -45,5 +50,25 @@ void Perso::Interagir(Bloc_Jump bj) {
 
 void Perso::Interragir(Bloc_Deplacable bd, Map map) {
 	bd.setVitx(this->getVitx());					//vitesse du bloc identique a celle du perso
-	bd.deplacer(map);	
+	bd.deplacer();	
+}
+
+
+
+bool Perso::estSol( Map &map)
+{
+	int posX = this->getPosx();
+	int posY = this->getPosy();
+	bool check;
+	check = map.isBlocFixe(posX / map.getLargeurBloc(), (posY - 1) / map.getLargeurBloc());
+	int i = 0;
+	Entite autre;
+	while (!check && i < Entite::getNbEntite() - 1)
+	{
+		autre = map.getEntite(i);
+		check = check && !(posY == autre.getPosy() + autre.getHauteur() + 1);
+		++i;
+	}
+	return check;
+
 }
