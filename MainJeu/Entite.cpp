@@ -6,7 +6,6 @@ int Entite::getPosx() { return posx; }
 int Entite::getPosy() { return posy; }
 int Entite::getVitx() { return vitx; }
 int Entite::getVity() { return vity; }
-int Entite::getID() { return IDtexture; }
 
 void Entite::setHauteur(int l)	{ hauteur = l; }
 void Entite::setLongueur(int l) { longueur = l; }
@@ -15,27 +14,20 @@ void Entite::setPosy(int y)		{ posy = y; }
 void Entite::setVitx(int vx)	{ vitx = vx; }
 void Entite::setVity(int vy)	{ vity = vy; }
 void Entite::setVitesse(int vx, int vy) { vitx = vx; vity = vy; }
-void Entite::setID(int id) { IDtexture=id; }
 
-GLuint indices2[] =
+const GLuint indices[] =
 {
 	0,1,2,
 	0,2,3
 };
 
-Entite::Entite()
+
+void Entite::InitTexture()
 {
-	hauteur = 0;
-	longueur = 0;
-	posx = 0;
-	posy = 0;
-	vitx = 0;
-	vity = 0;
-	IDtexture = 0;
-	
+	//TO DO
 }
-/*
-Entite::Entite(int larg, int lng, int x, int y, int vx, int vy,int id)
+
+Entite::Entite(int larg, int lng, int x, int y, int vx, int vy)
 {
 	hauteur = larg;
 	longueur = lng;
@@ -43,9 +35,7 @@ Entite::Entite(int larg, int lng, int x, int y, int vx, int vy,int id)
 	posy = y;
 	vitx = x;
 	vity = y;
-	IDtexture = id;
 }
-*/
 
 bool operator== (Entite& a, Entite& b)
 {
@@ -56,7 +46,7 @@ bool operator== (Entite& a, Entite& b)
 		&& a.getVitx() == b.getVitx()
 		&& a.getVity() == b.getVity());
 }
-/*
+
 void Entite::deplacer(Map map)
 {
 	int currEntiteXgrid, currEntiteYgrid;
@@ -111,25 +101,24 @@ bool Entite::estSol(Map map)
 		++i;
 	}
 
-}*/
+}
 
-
-
-void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, std::size_t nVertices, VAO& VAO1, Texture* tabTexture)
+void Entite::affiche(GLfloat posx, GLfloat posy, GLfloat* vertices, VAO& VAO1)
 {
 	vertices[0] = posx;
 	vertices[1] = posy;
 	vertices[5] = posx;
-	vertices[6] = posy + (GLfloat)((GLfloat)hauteur / 800.0f);
-	vertices[10] = posx + (GLfloat)((GLfloat)longueur / 800.0f);
-	vertices[11] = posy + (GLfloat)((GLfloat)hauteur / 800.0f);
-	vertices[15] = posx + (GLfloat)((GLfloat)longueur / 800.0f);
+	vertices[6] = posy + hauteur;
+	vertices[10] = posx + longueur;
+	vertices[11] = posy + hauteur;
+	vertices[15] = posx + longueur;
 	vertices[16] = posy;
 	VAO1.Bind();
-	VBO VBO1(vertices, nVertices*sizeof(*vertices));
-	EBO EBO1(indices2, sizeof(indices2));
+	VBO VBO1(vertices, sizeof(vertices));
+	EBO EBO1(indices, sizeof(indices));
 	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 5 * sizeof(float), (void*)0);
 	VAO1.LinkAttrib(VBO1, 1, 2, GL_FLOAT, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
 	VAO1.Unbind();
 	VBO1.Unbind();
 	EBO1.Unbind();
