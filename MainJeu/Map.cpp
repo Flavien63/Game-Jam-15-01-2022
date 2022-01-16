@@ -10,6 +10,8 @@ Map::Map() : _entites(nullptr)
 			this->_mapBlocFix[j][i] = 0;
 		}
 	}
+
+	chargerMap("./Carte.txt");
 }
 
 void Map::chargerMap(string path)
