@@ -10,22 +10,12 @@ Joueur::~Joueur()
 
 }
 
-void Joueur::CheckpointUp()
+void Joueur::setCheckpoint(Checkpoint c)
 {
-	checkpoint++;
+	checkpoint = c;
 }
 
-void Joueur::CheckpointDown()
-{
-	checkpoint--;
-}
-
-void Joueur::CheckpointRAZ()
-{
-	checkpoint=0;
-}
-
-int Joueur::getCheckpoint()
+Checkpoint Joueur::getCheckpoint()
 {
 	return checkpoint;
 }
