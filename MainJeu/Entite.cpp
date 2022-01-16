@@ -58,9 +58,9 @@ void Entite::deplacer(Map map)
 	bool checkX = true;
 	bool checkY = true;
 	int i = 0;
-	int posXgrid = (posx + vitx) / map.getLargeurBlock();
-	int posYgrid = (posy + vity) / map.getLargeurBlock();
-	if (!(map.matBlock[posXgrid][posYgrid])) {
+	int posXgrid = (posx + vitx) / map.getLargeurBloc();
+	int posYgrid = (posy + vity) / map.getLargeurBloc();
+	if (!(map.matBloc[posXgrid][posYgrid])) {
 		while ((checkX || checkY) && i<nbEntite)
 		{
 			Entite currEntite = map.getEntite(i);
