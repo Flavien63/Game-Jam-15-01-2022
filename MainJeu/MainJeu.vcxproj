@@ -151,6 +151,7 @@
     <ClInclude Include="Checkpoint.hpp" />
     <ClInclude Include="EBO.h" />
     <ClInclude Include="Ennemi.hpp" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Joueur.hpp" />
     <ClInclude Include="Perso.hpp" />
     <ClInclude Include="Pic.hpp" />
@@ -172,6 +173,7 @@
     <ClCompile Include="EBO.cpp" />
     <ClCompile Include="Ennemi.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="Perso.cpp" />
     <ClCompile Include="Pic.cpp" />

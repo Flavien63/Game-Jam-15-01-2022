@@ -2,10 +2,8 @@
 #include "Item.h"
 
 Item::Item(int largeur, int longeur, int posx, int posy, int typ) :
-	Bloc(largeur, longeur, posx, posy, 0, 0)
+	Bloc(largeur, longeur, posx, posy, 0, 0), type(typ), actif()
 {
-	actif = true;
-	type = typ;
 }
 
 int Item::getType() {

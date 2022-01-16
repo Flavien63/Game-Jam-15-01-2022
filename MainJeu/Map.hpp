@@ -12,7 +12,7 @@ class Entite;
 #include "Entite.hpp"
 #include "Bloc_Jump.hpp"
 #include "Bloc_Deplacable.hpp"
-#include "Item.hpp"
+#include "Item.h"
 #include "Plateforme.hpp"
 #include "Pic.hpp"
 #include "Checkpoint.hpp"

@@ -56,7 +56,7 @@ void Map::chargerMap(string path)
 					break;
 				case BlocSpecialItem:
 					monFlux >> bloc;
-					//_entites[Entite::getNbEntite() - 1] = Item(_largeurBloc, _largeurBloc, i * _largeurBloc, j * _largeurBloc, bloc);
+					_entites[Entite::getNbEntite() - 1] = Item(_largeurBloc, _largeurBloc, i * _largeurBloc, j * _largeurBloc, bloc);
 					break;
 				default:
 					break;
